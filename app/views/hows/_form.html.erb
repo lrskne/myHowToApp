@@ -1,0 +1,14 @@
+<% # added this new _form.html.erb file pg 119 %>
+
+<%= form_for(@how) do |f| %>
+  <p>
+    <%# Added this line from pg 107 - to use the error_messages method
+    <%# you also had to add the dynamic_form gem to your Gemfil %>
+    
+    <%= f.error_messages %>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  
+  <%= f.submit %>
+
+<% end %>

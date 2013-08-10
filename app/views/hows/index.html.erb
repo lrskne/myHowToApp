@@ -1,0 +1,10 @@
+<h2>How To's</h2>
+<ul>
+  <% @hows.each do |how| %>
+    <li><%= link_to how.description, how%></li>
+  <% end %>
+</ul>
+
+<%
+</br>
+<%= link_to "New How To", new_how_path %>

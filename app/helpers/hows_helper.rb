@@ -1,0 +1,2 @@
+module HowsHelper
+end

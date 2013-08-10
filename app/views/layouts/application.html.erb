@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%#<title>My How To Application</title> %>
+  
+  <%# lbe: added this title block, with corresponding change to the show.html.erb,
+  application_helper.rb %>
+  <title>
+    <% if content_for?(:title) %>
+      <%= yield(:title) %>
+    <% else %>
+      How To
+    <% end %>
+  </title>
+
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% #lbe: added this code flash block%>
+<% flash.each do | key, value | %>
+  <div class='flash' id='<%= key %>'>
+    <%= value %>
+  </div>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>
